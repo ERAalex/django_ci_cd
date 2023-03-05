@@ -1,0 +1,211 @@
+{% load static %}
+
+<html>
+	<head>
+		<title>Espinosa Rozov</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main_my.css" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index.html">E.R.A.</a> Python developer</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="{% url 'index' %}">Главная</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Меню</a>
+								<ul>
+									<li><a href="{% url 'index' %}">Главная</a></li>
+									<li><a href="https://github.com/ERAalex"
+							   target="_blank">GitHub</a></li>
+									<li><a href="{% static 'images/foto/python_junior_RU_Espinosa_Rozov.pdf' %}"
+							   target="_blank">Резюме</a></li>
+									<li><a href="{% url 'projects' %}">Проекты</a></li>
+								</ul>
+							</li>
+
+							</li>
+							<li><a href="{% url 'eng_index' %}" target="_blank" class="button">ENG</a></li>
+							<li><a href="{% url 'esp_index' %}" target="_blank" class="button">ESP</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+			{% block body %}
+
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Эспиноса Розов Александр</h2>
+					<p>Python разработчик</p>
+					<ul class="actions special">
+						<li><a href="{% static 'images/foto/python_junior_RU_Espinosa_Rozov.pdf' %}"
+							   target="_blank" class="button primary">Мое резюме</a></li>
+						<li><a href="{% url 'projects' %}" class="button">Узнать больше о проектах</a></li>
+					</ul>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>Добро пожаловать на мою страницу</h2>
+							<p>Я python разработчик</p>
+						</header>
+					</section>
+
+					<section class="box special features">
+						<div class="features-row">
+							<section>
+<!--								<h3>Python developer</h3>-->
+								<img src="{% static 'images/foto/my_foto_glav1.jpeg' %}" width=80% >
+
+								<p></p>
+
+								<img src="{% static 'images/foto/my_foto_glav2.jpeg' %}" width=80% >
+
+								<p></p>
+							</section>
+
+							<section>
+								<span class="icon solid major fa-chart-area accent3"></span>
+
+								<div class = "index_need_1">
+
+									<h3 align="center">Опыт работы.</h3>
+									<p>2010 - 2021 - преподавание иностранных языков
+										(испанский - C1). <br>
+										- ГБОУ гимназия № 205<br>
+										- Частные курсы по иностранным языкам<br>
+									<br>2014 - 2022 - работа переводчиком испанского языка в ведущих
+										компаниях Санкт-Петербурга по работе с иностранными клиентами:
+										Arctur Travel, Marko Tour, SpbTickets, Intourist.<br>
+										- организация распорядка дня группы, контроль выполнения программ.<br>
+										- общение с клиентами на иностранном языке.<br>
+										- решение конфликтных ситуаций.<br><br>
+
+									2022 - 2023 - Обучение python-developer на курсах Нетологии. Диплом о переквалификации.<br><br>
+									2022 - 2023 - Углубленное программирование на Python для учителей. Сертификат. <br>
+									<br>2022 - 2023 - обучение на курсе Django: создание функциональных веб-приложений.<br><br>
+									2022 - выполнен ряд коммерческих проектов на заказ.</p>
+
+
+									<h3 align="center">Стек технологий:</h3>
+									<p>Python, Flask, Django Rest Framework
+									<br>Docker, GitHub, HTML, CSS </br></p>
+
+									<h3 align="center">Базы данных:</h3>
+									<p>PostgreSQL, MySQL, MongoDB</p>
+
+
+								</div>
+
+							</section>
+						</div>
+					</section>
+
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<h3>Знание иностранных языков:</h3>
+								<p>Английский - B2 (Upper-Intermediate)</br> Испанский - C1</p><br>
+								<ul class="actions special">
+<!--									<li><a href="#" class="button alt">Learn More</a></li>-->
+								</ul>
+							</section>
+
+						</div>
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<h3>Контакты</h3>
+								<p>телефон: +79117861595 <br>
+								почта: erapyth@gmail.com</p>
+								<ul class="icons">
+									<li><a href="https://t.me/espinosa_python" target="_blank" class="icon brands fa-telegram">
+										<span class="label">Telegram</span></a></li>
+									<li><a href="https://t.me/espinosa_python" target="_blank" class="icon brands fa-whatsapp">
+										<span class="label">Whatsapp</span></a></li>
+									<li><a href="https://github.com/ERAalex"
+										   target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									<li><a href="https://www.linkedin.com/in/alexander-espinosarozov-156a5825b/" target="_blank"
+										   class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+
+						</div>
+					</div>
+
+				</section>
+
+				{% endblock %}
+
+			<!-- CTA -->
+				<section id="cta">
+
+					{% if messages %}
+					{% for message in messages %}
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<h3><font color ="brown">{{ message }}</font></h3>
+					</div>
+					{% endfor %}
+					{% endif %}
+
+					<h2>Если Вас заинтересовали мои услуги</h2>
+					<ul class="icons">
+						напишите мне Вашу электронную почту, или отправьте сообщение в Телеграм -
+						<li><a href="https://t.me/espinosa_python" target="_blank" class="icon brands fa-telegram">
+							<span class="label">Telegram</span></a></li>
+					</ul>
+
+					<form method="post" action="#">
+						{% csrf_token %}
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-8 col-12-mobilep">
+								{{ form.email }}
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<input type="submit" value="Отправить" class="fit" />
+							</div>
+						</div>
+					</form>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://t.me/espinosa_python" target="_blank" class="icon brands fa-telegram">
+							<span class="label">Telegram</span></a></li>
+						<li><a href="https://github.com/ERAalex"
+							   target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/alexander-espinosarozov-156a5825b/" target="_blank"
+							   class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; All rights reserved.</li><li>Espinosa Rozov</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.dropotron.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
