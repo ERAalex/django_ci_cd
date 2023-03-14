@@ -42,7 +42,6 @@ def maria_project(request):
 
 
 
-
 ########################### ENG PART ###########################
 
 def eng_index(request):

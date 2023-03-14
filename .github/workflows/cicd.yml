@@ -1,0 +1,49 @@
+name: Автоматическое развертывание сайта
+
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: "0"
+      ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+      DB_ENGINE: ${{ secrets.DB_ENGINE }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+    services:
+      postgres_main:
+        image: postgres:12
+        env:
+          POSTGRES_DB: ${{ env.DB_NAME }}
+          POSTGRES_USER: ${{ env.DB_USER }}
+          POSTGRES_PASSWORD: ${{ env.DB_PASSWORD }}
+        ports:
+          - 5432:5432
+        options:
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: проверяем репозиторий на изменения
+        uses: actions/checkout@v3
+
+      - name: установка python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: установка зависимостей
+        run: pip install -r requirements.txt
+
+      - name: проверка тестов
+        run: python manage.py test
